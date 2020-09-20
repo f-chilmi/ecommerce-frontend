@@ -4,8 +4,29 @@
   color: #eaeaeb;
 }
 
+.themeColor:hover{
+  background-color: #CA3022;
+  border-color: #CA3022;
+}
+
 .greyColorButton{
   color: #9b9b9b;
   border: 1px solid #9B9B9B;
   background-color: transparent;
+}
+
+.greyColorButton:hover{
+  background-color: transparent;
+  border: 1px solid #DB3022;
+  color: #DB3022;
+}
+
+.greyColorButton:focus-within{
+  background-color: transparent;
+  border: 1px solid #DB3022;
+  color: #DB3022;
+}
+
+h4{
+  font-weight: 500;
 }

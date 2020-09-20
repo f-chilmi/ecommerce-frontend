@@ -13,23 +13,28 @@ import {
 // Importing page
 import NavigationBar from './NavigationBar'
 
-class Add extends React.Component{
+class Edit extends React.Component{
   constructor(props){
     super(props)
     this.state = {
       data: {},
       name: '',
       price: '',
-      category_id: 6,
+      category_id: '',
       description: '',
       alertOpen: false
     }
   }
 
-  getData = async() => {
-    const {data} = await axios.get('http://localhost:8080/category')
-    console.log(data)
-    this.setState({data: data.data})
+  async componentDidMount(){
+    await this.getData()
+  }
+
+  getData = async () => {
+    const {params} = this.props.match
+    const {data} = await axios.get(`http://localhost:8080/items/${params.id}`, qs.stringify(this.state.data))
+    this.setState(data.data)
+    console.log(data.data)
   }
 
   changeInput = (e) => {
@@ -39,31 +44,32 @@ class Add extends React.Component{
     })
   }
 
-  addItems = async(event) => {
-    event.preventDefault()
+  submitItems = async(event) => {
+    const {params} = this.props.match
     const {name, price, category_id, description} = this.state
     const data = qs.stringify({
-      name, price, category: category_id, description
+      name, price, category_id, description
     })
     console.log(data)
-    await axios.post('http://localhost:8080/items', data)
+    await axios.patch(`http://localhost:8080/items/${params.id}`, data)
     this.setState({alertOpen: true})
   }
 
   render(){
     const {data} = this.state
+    // console.log(this.state.data)
     return(
       <React.Fragment>
         <NavigationBar/>
         <Jumbotron>
           <Container>
             <Alert color="success" isOpen={this.state.alertOpen}>
-              Item added successfully!
+              Item updated successfully!
             </Alert>
             <Card className="p-5">
-              <h4>Add Product</h4>
+              <h4>Edit detail product</h4>
               <hr></hr>
-              <Form onSubmit={this.addItems}>
+              <Form onSubmit={this.submitItems}>
                 <FormGroup row>
                   <Label for="Name" sm={2}>Name Product</Label>
                   <Col sm={10}>
@@ -80,7 +86,7 @@ class Add extends React.Component{
                   <Label for="Category" sm={2}>Select category</Label>
                   <Col sm={10}>
                     <Input type="select" name='category_id' value={this.state.category_id} onChange={this.changeInput}>
-                      <option value='6' selected>Beauty</option>
+                      <option value='6'>Beauty</option>
                       <option value='1'>Electronics</option>
                       <option value='3'>Fashion</option>
                       <option value='2'>Home</option>
@@ -94,7 +100,7 @@ class Add extends React.Component{
                   </Col>
                 </FormGroup>
                 <FormGroup className="mt-5 ml-auto">
-                  <Button type="submit" className="rounded-pill themeColor">Add New Product</Button>
+                  <Button className="rounded-pill themeColor">Update</Button>
                   {/* {console.log(this.data)} */}
                 </FormGroup>
               </Form>
@@ -103,9 +109,9 @@ class Add extends React.Component{
           </Container>
         </Jumbotron>
       </React.Fragment>
-      
     )
   }
+
 }
 
-export default Add
+export default Edit

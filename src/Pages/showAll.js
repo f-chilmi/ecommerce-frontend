@@ -8,7 +8,7 @@ import {
   Button, ButtonGroup,
   Form, FormGroup, Label, Input,
   UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle,
-  Pagination, PaginationItem, PaginationLink
+  Pagination
 } from 'reactstrap'
 
 import {
@@ -27,6 +27,8 @@ class Show extends React.Component{
       selected: '?sort=asc',
       currentPage: '',
       nextPage: '',
+      nextLink: '',
+      prevLink: '',
       isActive0: true,
       isActive1: false,
       isActive2: false,
@@ -42,9 +44,11 @@ class Show extends React.Component{
     const {data} = await axios.get(`http://localhost:8080/items${this.props.location.search}`)
     this.setState({
       data: data,
-      currentPage: data.pageInfo.currentPage
+      currentPage: data.pageInfo.currentPage,
+      nextLink: data.pageInfo.nextLink,
+      prevLink: data.pageInfo.prevLink
     })
-    console.log(this.state.currentPage, this.state.currentPage+1)
+    // console.log(this.state.currentPage, this.state.currentPage+1)
   }
 
   getData = async () => {
@@ -104,7 +108,7 @@ class Show extends React.Component{
   render(){
     const {data} = this.state
     const {path} = this.props.match
-    // console.log(this.state.nextPage)
+    console.log(this.state)
     return(
       <React.Fragment>
         <NavigationBar/>
@@ -178,23 +182,22 @@ class Show extends React.Component{
                 </Table>
             </CardBody>
             </Card>
-            <Pagination aria-label="Page navigation example" name="page">
-              <div className="d-flex flex-row mx-auto">
-              <li class="page-item" >
-                <Link to={`#`} className="page-link" aria-label="Next">
-                  <span aria-hidden="true">‹</span>
-                  <span class="sr-only">Previous</span>
-                </Link>
-              </li>
-              <li class="page-item">
-                <a href="#" class="page-link" aria-label="Next">
-                  <span aria-hidden="true">›</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-              </div>
-              
-            </Pagination>
+            {/* <div className="d-flex flex-row">
+            <Form >
+              <input type="hidden" name="page" value={this.state.currentPage-1}></input>
+              <Button onSubmit={this.getAllData()}>
+                <span aria-hidden="true">‹</span>
+                <span class="sr-only">Previous</span>
+              </Button>
+            </Form>
+            <Form >
+              <input type="hidden" name="page" value={this.state.currentPage+1}></input>
+              <Button onSubmit={this.getAllData()}>
+                <span aria-hidden="true">›</span>
+                <span class="sr-only">Next</span>
+              </Button>
+            </Form>
+            </div> */}
           </Container>
             
         </Jumbotron>

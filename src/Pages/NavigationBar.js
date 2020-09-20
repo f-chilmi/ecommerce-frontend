@@ -30,10 +30,10 @@ class NavigationBar extends React.Component{
             <Collapse isOpen={this.state.navbarOpen} navbar>
               <Nav className="ml-auto">
                 <Row>
-                  <Col><NavLink href="#"> <img src={Cart}/> </NavLink></Col>
-                  <Col><NavLink href="#"> <img src={Bell}/> </NavLink></Col>
-                  <Col><NavLink href="#"> <img src={Mail}/> </NavLink></Col>
-                  <Col><NavLink href="#"> <img src={Smile}/></NavLink></Col>
+                  <Col><NavLink href="#"> <img src={Cart} alt="cart.svg" /> </NavLink></Col>
+                  <Col><NavLink href="#"> <img src={Bell} alt="bell.svg" /> </NavLink></Col>
+                  <Col><NavLink href="#"> <img src={Mail} alt="mail.svg" /> </NavLink></Col>
+                  <Col><NavLink href="#"> <img src={Smile} alt="person.png" /></NavLink></Col>
                 </Row>
               </Nav>
             </Collapse>

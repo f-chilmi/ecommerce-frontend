@@ -6,7 +6,6 @@ import {
   Row, Col,
   Jumbotron, Container, 
   Card, CardBody, CardTitle, CardSubtitle, CardImg, CardText,
-  
   Table,
   Button, ButtonGroup,
   Form, FormGroup, Label, Input,
@@ -82,7 +81,7 @@ export default class Home extends React.Component{
       <p className="newThings mb-0">New</p>
       <p className="greyText">You've never seen it before!</p>
         <Row className="justify-content-between mb-4">
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" />
               <CardBody>
@@ -100,7 +99,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col  className="col-sm-4 col-md">
+          <Col  className="col-sm-4 col-md-3">
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -118,7 +117,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -136,7 +135,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -154,7 +153,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -172,9 +171,9 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-        </Row>
-        <Row className="justify-content-between mb-4">
-          <Col className="col-sm-4 col-md" >
+        {/* </Row>
+        <Row className="justify-content-between mb-4"> */}
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -192,7 +191,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col  className="col-sm-4 col-md">
+          <Col  className="col-sm-4 col-md-3">
             <Card className="shadow border-0">
               <CardImg src={Suit}  alt="suit.png" top width="100%"/>
               <CardBody>
@@ -210,7 +209,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -228,7 +227,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -246,7 +245,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -264,9 +263,9 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-        </Row>
-        <Row className="justify-content-between mb-4">
-          <Col className="col-sm-4 col-md" >
+        {/* </Row>
+        <Row className="justify-content-between mb-4"> */}
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -284,7 +283,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col  className="col-sm-4 col-md">
+          <Col  className="col-sm-4 col-md-3">
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -302,7 +301,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -320,7 +319,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -338,7 +337,7 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-          <Col className="col-sm-4 col-md" >
+          <Col className="col-sm-4 col-md-3" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
               <CardBody>
@@ -450,8 +449,8 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-        </Row>
-        <Row className="justify-content-between mb-4">
+        {/* </Row>
+        <Row className="justify-content-between mb-4"> */}
           <Col className="col-sm-4 col-md" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>
@@ -542,8 +541,8 @@ export default class Home extends React.Component{
               </CardBody>
             </Card>
           </Col>
-        </Row>
-        <Row className="justify-content-between mb-4">
+        {/* </Row>
+        <Row className="justify-content-between mb-4"> */}
           <Col className="col-sm-4 col-md" >
             <Card className="shadow border-0">
               <CardImg src={Suit} alt="suit.png" top width="100%"/>

@@ -75,8 +75,8 @@ class ShowDetail extends React.Component{
               Are you sure want to delete the product?
             </ModalBody>
             <ModalFooter className="border-0">
-              <Button onClick={()=>this.deleteData()} href="/">Yes</Button>
-              <Button onClick={()=>this.setState({modalOpen: false})}>No</Button>
+              <Button onClick={()=>this.deleteData()} href="/" className="greyColorButton rounded-pill">Yes</Button>
+              <Button onClick={()=>this.setState({modalOpen: false})} className="greyColorButton rounded-pill">No</Button>
             </ModalFooter>
           </Modal>
 

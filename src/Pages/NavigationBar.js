@@ -25,15 +25,15 @@ class NavigationBar extends React.Component{
     return(
       <Navbar color="faded" light expand="md" className="shadow">
           <Container>
-            <NavbarBrand> <Link to="/"> <img src={Logo} alt='logo.svg'/></Link></NavbarBrand>
-            <NavbarToggler onClick={()=>this.setState({navbarOpen: !this.setState.navbarOpen})}/>
-            <Collapse isOpen={this.state.navbarOpen} navbar>
+            <NavbarBrand className="mb-3"> <Link to="/"> <img src={Logo} alt='logo.svg'/></Link></NavbarBrand>
+            <NavbarToggler onClick={()=>this.setState({navbarOpen: !this.state.navbarOpen })}/>
+            <Collapse isOpen={this.state.navbarOpen} navbar >
               <Nav className="ml-auto">
                 <Row>
-                  <Col><NavLink href="#"> <img src={Cart} alt="cart.svg" /> </NavLink></Col>
-                  <Col><NavLink href="#"> <img src={Bell} alt="bell.svg" /> </NavLink></Col>
-                  <Col><NavLink href="#"> <img src={Mail} alt="mail.svg" /> </NavLink></Col>
-                  <Col><NavLink href="#"> <img src={Smile} alt="person.png" /></NavLink></Col>
+                  <Col><Link className="m-2" to="#"> <img src={Cart} alt="cart.svg" /> </Link></Col>
+                  <Col><Link className="m-2" to="#"> <img src={Bell} alt="bell.svg" /> </Link></Col>
+                  <Col><Link className="m-2" to="#"> <img src={Mail} alt="mail.svg" /> </Link></Col>
+                  <Col><Link className="m-2" to="/product"> <img src={Smile} alt="person.png" /></Link></Col>
                 </Row>
               </Nav>
             </Collapse>
